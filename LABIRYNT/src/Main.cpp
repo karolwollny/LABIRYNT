@@ -7,28 +7,22 @@
 #include <cstdlib>
 #include <ctime>
 #include <vector>
-#include <iostream>
 
 using namespace std; 
-/*************************************************************************************/
-int N = 16;
-int M = 16;
 
 /*************************************************************************************/
 struct Cell {
 public:
 	int x, y, k;
 
-	Cell() {
-
-	}
-	Cell(int x, int y, int k) {
+	Cell() {}									//DOMYŚLNY KONSTRUKTOR
+	Cell(int x, int y, int k) {					//KONSTRUKTOR TWORZĄCY OBIEKT STRUKTURY CELL GDZIE X, Y - WSPÓŁRZĘDNE, K - NUMER KOMÓRKI
 		this->x = x;
 		this->y = y;
 		this->k = k;
 
 	}
-	bool operator== (const Cell &q) {
+	bool operator== (const Cell &q) {			//PRZEŁADOWANIE OPERTORA == KONIECZNE BY MÓC USUWAĆ Z LISTY KONKRETNY ELEMENT
 		return k == q.k;
 	}
 };
